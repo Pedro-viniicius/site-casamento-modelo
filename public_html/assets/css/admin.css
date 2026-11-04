@@ -1,0 +1,61 @@
+/* Admin: mesmo design system do site (site.css), só o layout muda. */
+body.admin { padding-bottom: 0; }
+.admin__login { max-width: 400px; margin: 10vh auto; }
+.admin__topo { position: sticky; top: 0; z-index: 10; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--e-3); padding: .5rem 16px; background: rgba(245,244,239,.95); border-bottom: 1px solid var(--linha); backdrop-filter: blur(8px); }
+.admin__abas { display: flex; gap: .25rem; list-style: none; margin: 0; padding: 0; overflow-x: auto; }
+.admin__abas a { display: block; padding: .55em .9em; border-radius: var(--raio-pill); text-decoration: none; color: var(--tinta-suave); font-weight: 700; font-size: var(--t-sm); white-space: nowrap; min-height: 44px; }
+.admin__abas a[aria-current="page"] { background: var(--oliva); color: #fff; }
+.admin__main { max-width: 1100px; margin: 0 auto; padding: var(--e-5) 16px var(--e-8); display: grid; gap: var(--e-4); }
+.admin__totais { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--e-3); }
+.admin__totais .card { text-align: center; padding: var(--e-4); }
+.admin__totais strong { display: block; font-size: 2rem; color: var(--oliva); }
+.admin__totais span { font-size: var(--t-xs); color: var(--tinta-suave); text-transform: uppercase; letter-spacing: .1em; font-weight: 700; }
+.admin__barra { display: flex; flex-wrap: wrap; gap: var(--e-2); align-items: center; }
+.admin__barra input { min-height: 44px; border-radius: var(--raio-pill); border: 1.5px solid #BDBBA6; padding: 0 1em; flex: 1; min-width: 200px; font-size: 16px; }
+.admin__importar { display: grid; gap: var(--e-2); }
+.admin__importar summary { justify-self: start; cursor: pointer; }
+.admin__importar input[type="file"] { border-radius: var(--raio); padding: .5em 1em; background: #fff; }
+.admin__importar .dica { margin: 0; }
+.tabela-rolagem { overflow-x: auto; background: var(--papel); border-radius: var(--raio); box-shadow: var(--sombra-1); }
+.tabela { width: 100%; border-collapse: collapse; font-size: var(--t-sm); }
+.tabela th, .tabela td { padding: .7em .8em; text-align: left; border-bottom: 1px solid var(--linha); vertical-align: top; }
+.tabela th { background: var(--marfim-2); font-size: var(--t-xs); text-transform: uppercase; letter-spacing: .08em; }
+.tabela__msg { max-width: 260px; }
+.admin__form { display: grid; gap: var(--e-1); }
+.grade-2 { display: grid; gap: 0 var(--e-4); }
+@media (min-width: 700px) { .grade-2 { grid-template-columns: 1fr 1fr; } }
+.check { display: flex; align-items: center; gap: .5rem; min-height: 44px; font-weight: 600; }
+.check input { width: 22px; height: 22px; accent-color: var(--oliva); }
+.admin__oferta p { margin-bottom: var(--e-2); }
+.admin__oferta details { margin-top: var(--e-3); }
+form.inline { display: inline-flex; flex-wrap: wrap; gap: var(--e-2); align-items: center; }
+form.inline input { min-height: 40px; border-radius: var(--raio-s); border: 1.5px solid #BDBBA6; padding: 0 .6em; font-size: 15px; }
+.admin__recado--novo { border-left: 5px solid var(--dourado); }
+.admin__linha-form { display: flex; flex-wrap: wrap; gap: var(--e-2); align-items: center; padding: var(--e-3); }
+.admin__linha-form input, .admin__linha-form select { min-height: 44px; border-radius: var(--raio-s); border: 1.5px solid #BDBBA6; padding: 0 .7em; font-size: 15px; }
+.admin__linha-form input[name="nome"] { flex: 1; min-width: 180px; }
+.admin__lista { margin: 0; padding-left: 1.2em; }
+.pendente-tag { display: inline-block; background: var(--erro-fundo); color: var(--erro); font-size: 11px; font-weight: 700; padding: .1em .5em; border-radius: 6px; text-transform: uppercase; letter-spacing: .05em; vertical-align: middle; }
+summary { cursor: pointer; min-height: 40px; display: flex; align-items: center; }
+code { background: var(--marfim-2); padding: .1em .4em; border-radius: 4px; font-size: .9em; word-break: break-all; }
+/* Presenças: cards clicáveis ("ver quem") e a lista de pessoas */
+.admin__cartao { display: grid; gap: .15rem; text-decoration: none; color: inherit; border: 2px solid transparent; transition: transform .15s, border-color .15s, box-shadow .15s; }
+.admin__cartao:hover { transform: translateY(-2px); border-color: #D8D6C2; }
+.admin__cartao:focus-visible { outline: 3px solid var(--oliva); outline-offset: 2px; }
+.admin__cartao small { font-size: var(--t-xs); color: var(--oliva); font-weight: 700; }
+.admin__cartao--aberto { border-color: var(--oliva); background: var(--marfim-2); }
+.admin__quem { display: grid; gap: var(--e-3); }
+.admin__quem-topo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--e-2); }
+.admin__quem-topo h2 { margin: 0; }
+.admin__quem-lista { margin: 0; padding-left: 2.2em; columns: 2 280px; column-gap: var(--e-5); }
+.admin__quem-lista li { break-inside: avoid; padding: .35em 0; border-bottom: 1px solid var(--linha); }
+.admin__quem-lista .dica { display: block; }
+.selo-mini { display: inline-block; font-size: var(--t-xs); font-weight: 700; padding: .05em .55em; border-radius: var(--raio-pill); background: var(--marfim-2); color: var(--oliva); }
+@media (prefers-reduced-motion: reduce) { .admin__cartao { transition: none; } .admin__cartao:hover { transform: none; } }
+/* Cabeçalho da tabela de presenças: clique para ordenar (de novo inverte) */
+.tabela__ordenar { display: inline-flex; align-items: center; gap: .35em; min-height: 32px; color: inherit; text-decoration: none; white-space: nowrap; }
+.tabela__ordenar:hover { color: var(--oliva); }
+.tabela__ordenar:focus-visible { outline: 3px solid var(--oliva); outline-offset: 2px; border-radius: 4px; }
+.tabela__seta { font-size: .9em; opacity: .35; }
+.tabela__ordenar--ativa { color: var(--oliva); }
+.tabela__ordenar--ativa .tabela__seta { opacity: 1; }

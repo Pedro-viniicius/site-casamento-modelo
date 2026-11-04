@@ -1,0 +1,22 @@
+# Segredos e dados locais
+config/.env.php
+config/import_key.txt
+*.local.php
+# Dados de cada casal ficam FORA do Git (o repositório é só a estrutura, reutilizável):
+# fotos, rota do mapa e o relatório de ofertas gerado pelo importador.
+public_html/assets/img/fotos/*.jpg
+public_html/assets/img/fotos/*.jpeg
+public_html/assets/img/fotos/*.png
+public_html/assets/img/fotos/*.webp
+public_html/assets/data/rota.geojson
+OFERTAS.md
+public_html/assets/img/fotos/padrinhos/*
+!public_html/assets/img/fotos/padrinhos/.gitkeep
+# Teste local
+.qa/
+node_modules/
+config/.env.producao.php
+config/admin_senha_inicial.txt
+config/site.txt
+# Importação de presenças: contém e-mails e telefones dos convidados
+database/importar_rsvps_*.sql

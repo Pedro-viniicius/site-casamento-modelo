@@ -1,0 +1,4 @@
+# Deploy por Git: o repositório inteiro fica numa pasta dentro do public_html do domínio principal.
+# Só public_html/ (a raiz do subdomínio) é público; o resto (inc, config, data, database, tools, *.md) fica bloqueado.
+Require all denied
+Options -Indexes
